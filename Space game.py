@@ -3,7 +3,7 @@ import pygame
 # import random
 # from pygame import mixer
 # import math
-
+# im a puppy
 # Get screen
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
