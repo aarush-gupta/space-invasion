@@ -50,16 +50,16 @@ enemy4_x = 200
 enemy4_y = 300
 enemy4_x_change = 1.0
 enemy4_y_change = 45
-
+# Label
 font_name = pygame.font.get_default_font()
 font = pygame.font.SysFont("arial", True, False, 15)
 text = "Score = " + str(score)
-label = font.render(text, True, (100, 255, 125))
+label = font.render(text, True, (100, 250, 125))
 label_x = 275
 label_y = 445
-
-"""mixer.music.load("Background_music (1).mp3")
-mixer.music.play(-1)"""
+# Music
+mixer.music.load("Background_music (1).mp3")
+mixer.music.play(-1)
 
 
 def ____player____(x, y):
