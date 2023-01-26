@@ -58,7 +58,7 @@ label = font.render(text, True, (100, 250, 125))
 label_x = 275
 label_y = 445
 # Music
-mixer.music.load("Background_music (1).mp3")
+mixer.music.load("sounds/Background_music.mp3")
 mixer.music.play(-1)
 
 
