@@ -7,7 +7,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
 # Bullet
-img_bullet = pygame.image.load("bullet.png")
+img_bullet = pygame.image.load("image/bullet.png")
 bullet_x = 0
 bullet_y = 500
 bullet_x_change = 0
@@ -15,37 +15,37 @@ bullet_y_change = 15
 ____visible____ = False
 
 # BG Image
-img_bg = pygame.image.load("background (1).jpg")
+img_bg = pygame.image.load("image/background (1).jpg")
 bg_x = 0
 bg_y = 0
 
 # Player
-img_player = pygame.image.load("Rocket.png")
+img_player = pygame.image.load("image/Rocket.png")
 player_x = 368
 player_y = 530
 player_x_change = 0
 player_y_change = 0
 score = 0
 # Enemies
-img_enemy = pygame.image.load("enemy.png")
+img_enemy = pygame.image.load("image/enemy.png")
 enemy_x = 700
 enemy_y = 75
 enemy_x_change = 2.5
 enemy_y_change = 50
 
-img_enemy2 = pygame.image.load("ufo (1).png")
+img_enemy2 = pygame.image.load("image/ufo (1).png")
 enemy2_x = 175
 enemy2_y = 150
 enemy2_x_change = -1.5
 enemy2_y_change = 40
 
-img_enemy3 = pygame.image.load("alien.png")
+img_enemy3 = pygame.image.load("image/alien.png")
 enemy3_x = 100
 enemy3_y = 100
 enemy3_x_change = 1.0
 enemy3_y_change = 45
 
-img_enemy4 = pygame.image.load("space-ship.png")
+img_enemy4 = pygame.image.load("image/space-ship.png")
 enemy4_x = 200
 enemy4_y = 300
 enemy4_x_change = 1.0
@@ -116,6 +116,8 @@ while is_running:
                 if not ____visible____:
                     bullet_x = player_x
                     ____shoot_bullet____(player_x, bullet_y)
+                    mixer.music.load("sounds/shot (1).mp3")
+                    mixer.music.play(-1)
 
         player_x += player_x_change
         # player_y += player_y_change
@@ -173,25 +175,32 @@ while is_running:
             print(score)
             enemy_x = 700
             enemy_y = 75
+            mixer.music.load("sounds/punch (1).mp3")
+            mixer.music.play(-1)
         if hit2:
             bullet_y = 500
             score += 1
             print(score)
             enemy2_x = 175
             enemy2_y = 150
+            mixer.music.load("sounds/punch (1).mp3")
+            mixer.music.play(-1)
         if hit3:
             bullet_y = 500
             score += 1
             print(score)
             enemy3_x = 100
             enemy3_y = 100
+            mixer.music.load("sounds/punch (1).mp3")
+            mixer.music.play(-1)
         if hit4:
             bullet_y = 500
             score += 1
             print(score)
             enemy4_x = 200
             enemy4_y = 300
-
+            mixer.music.load("sounds/punch (1).mp3")
+            mixer.music.play(-1)
         ____character____(img_enemy, enemy_x, enemy_y)
         ____character____(img_enemy2, enemy2_x, enemy2_y)
         ____character____(img_enemy3, enemy3_x, enemy3_y)
