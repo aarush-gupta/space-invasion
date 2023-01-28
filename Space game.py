@@ -25,7 +25,6 @@ player_x = 368
 player_y = 530
 player_x_change = 0
 player_y_change = 0
-score = 0
 # Enemies
 img_enemy = pygame.image.load("image/enemy.png")
 enemy_x = 700
@@ -51,23 +50,25 @@ enemy4_y = 300
 enemy4_x_change = 1.0
 enemy4_y_change = 45
 # Label
-font_name = pygame.font.get_default_font()
-font = pygame.font.SysFont("arial", True, False, 15)
-text = "Score = " + str(score)
-label = font.render(text, True, (100, 250, 125))
-label_x = 275
-label_y = 445
+score = 0
+font_name = pygame.font.Font("freesansbold.ttf", 30)
+text_x = 10
+text_y = 10
+
+
+def ____label____(x, y):
+    text = font_name.render(f'score: {score}', True, (255, 255, 255))
+    screen.blit(text, (x, y))
+
+
 # Music
+
 mixer.music.load("sounds/Background_music.mp3")
 mixer.music.play(-1)
 
 
 def ____player____(x, y):
     screen.blit(img_player, (x, y))
-
-
-def ____label____(x, y):
-    screen.blit(label, (x, y))
 
 
 def ____bg____(x, y):
@@ -86,7 +87,6 @@ def ____shoot_bullet____(x, y):
 
 pygame.display.set_caption("☄️🚀Space🛸Invasion🚀☄️")
 
-score = 0
 is_running = True
 while is_running:
     # screen.fill((13, 0, 110))
@@ -175,36 +175,32 @@ while is_running:
             print(score)
             enemy_x = 700
             enemy_y = 75
-            mixer.music.load("sounds/punch (1).mp3")
-            mixer.music.play(-1)
+
         if hit2:
             bullet_y = 500
             score += 1
             print(score)
             enemy2_x = 175
             enemy2_y = 150
-            mixer.music.load("sounds/punch (1).mp3")
-            mixer.music.play(-1)
+
         if hit3:
             bullet_y = 500
             score += 1
             print(score)
             enemy3_x = 100
             enemy3_y = 100
-            mixer.music.load("sounds/punch (1).mp3")
-            mixer.music.play(-1)
+
         if hit4:
             bullet_y = 500
             score += 1
             print(score)
             enemy4_x = 200
             enemy4_y = 300
-            mixer.music.load("sounds/punch (1).mp3")
-            mixer.music.play(-1)
+        ____label____(text_x, text_y)
         ____character____(img_enemy, enemy_x, enemy_y)
         ____character____(img_enemy2, enemy2_x, enemy2_y)
         ____character____(img_enemy3, enemy3_x, enemy3_y)
         ____character____(img_enemy4, enemy4_x, enemy4_y)
         ____character____(img_player, player_x, player_y)
-        ____label____(label_x, label_y)
+        ____label____(text_x, text_y)
         pygame.display.update()
