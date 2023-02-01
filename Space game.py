@@ -5,7 +5,6 @@ import math
 # Get screen
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
-
 # Bullet
 img_bullet = pygame.image.load("image/bullet.png")
 bullet_x = 0
@@ -13,12 +12,10 @@ bullet_y = 500
 bullet_x_change = 0
 bullet_y_change = 15
 ____visible____ = False
-
 # BG Image
 img_bg = pygame.image.load("image/background (1).jpg")
 bg_x = 0
 bg_y = 0
-
 # Player
 img_player = pygame.image.load("image/Rocket.png")
 player_x = 368
@@ -32,19 +29,16 @@ enemy_x = 700
 enemy_y = 75
 enemy_x_change = 2.5
 enemy_y_change = 50
-
 img_enemy2 = pygame.image.load("image/ufo (1).png")
 enemy2_x = 175
 enemy2_y = 150
 enemy2_x_change = -1.5
 enemy2_y_change = 40
-
 img_enemy3 = pygame.image.load("image/alien.png")
 enemy3_x = 100
 enemy3_y = 100
 enemy3_x_change = 1.0
 enemy3_y_change = 45
-
 img_enemy4 = pygame.image.load("image/space-ship.png")
 enemy4_x = 200
 enemy4_y = 300
@@ -85,7 +79,6 @@ def ____shoot_bullet____(x, y):
 
 
 pygame.display.set_caption("☄️🚀Space🛸Invasion🚀☄️")
-
 score = 0
 is_running = True
 while is_running:
@@ -168,7 +161,6 @@ while is_running:
         hit2 = ____collision____(enemy2_x,  enemy2_y,  bullet_x,  bullet_y)
         hit3 = ____collision____(enemy3_x,  enemy3_y,  bullet_x,  bullet_y)
         hit4 = ____collision____(enemy4_x,  enemy4_y,  bullet_x,  bullet_y)
-
         if hit:
             bullet_y = 500
             score += 1
